@@ -5,7 +5,7 @@ const dbConnect = () => {
     const conn = mongoose.connect(process.env.MONGODB_URL);
     console.log("Kết nối database thành công");
   } catch (error) {
-    console.log("DAtabase error");
+    console.log("Database error");
   }
 };
 module.exports = dbConnect;

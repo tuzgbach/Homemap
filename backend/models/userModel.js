@@ -1,7 +1,7 @@
-const mongoose = require("mongoose"); // Erase if already required
+const mongoose = require("mongoose"); // Xóa nếu đã được yêu cầu
 const bcrypt = require("bcrypt");
 
-// Declare the Schema of the Mongo model
+// Khai báo Schema của mô hình Mongo
 var userSchema = new mongoose.Schema(
   {
     firstname: {
@@ -40,6 +40,9 @@ var userSchema = new mongoose.Schema(
     },
     address: [{ type: mongoose.Schema.Types.ObjectId, ref: "Address" }],
     wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+    refreshToken: {
+      type: String,
+    },
   },
   {
     timestamps: true,
