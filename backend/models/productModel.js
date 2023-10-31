@@ -1,6 +1,4 @@
-const mongoose = require("mongoose"); // Erase if already required
-
-// Declare the Schema of the Mongo model
+const mongoose = require("mongoose");
 var productSchema = new mongoose.Schema(
   {
     title: {
@@ -49,11 +47,10 @@ var productSchema = new mongoose.Schema(
     ratings: [
       {
         star: Number,
-        comment: String,
         postedby: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
       },
     ],
-    totalrating: {
+    totalRating: {
       type: String,
       default: 0,
     },
@@ -61,5 +58,4 @@ var productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-//Export the model
 module.exports = mongoose.model("Product", productSchema);
